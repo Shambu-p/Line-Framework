@@ -1,0 +1,12 @@
+<?php
+
+use \Absoft\Line\Core\Engines\CLI\Engine;
+
+$_main_location = str_replace("\\", "/", __DIR__);
+
+include_once $_main_location."/vendor/autoload.php";
+
+$start = new Engine($argv, $_main_location);
+$start->start();
+
+?>

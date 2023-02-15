@@ -1,0 +1,21 @@
+{
+    "name": "absoft/line",
+    "description": "this is simple php framework named line",
+    "require": {
+        "php": "7.4.*",
+        "ext-json": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Absoft\\Line\\": "src/",
+            "Application\\": "apps/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abnet Kebede",
+            "email": "abnetkebede075@gmail.com"
+        }
+    ]
+}

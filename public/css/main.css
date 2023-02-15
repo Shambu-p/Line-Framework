@@ -1,0 +1,46 @@
+.mycolor-gray{
+    background: #ebebeb;
+}
+
+.mycolor-white-level-2{
+    background: #f7f7f7;
+}
+
+.mycolor-white-level-3{
+    background: #f6f6f6;
+}
+
+.text_color_red{
+    color: #f30011;
+}
+
+.framework_name{
+    font-family: "Matura MT Script Capitals";
+}
+
+.command_line_interface{
+    background: black;
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: normal;
+
+}
+.command_line_interface:focus{
+    background: black;
+    color: white;
+}
+
+.commands_view{
+    font-family: Consolas;
+    font-size: 20px;
+}
+
+.animate{
+    transition: 0.3s;
+}
+
+.my_heading{
+    font-size: 200px;
+    text-align: center;
+}

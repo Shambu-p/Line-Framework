@@ -1,0 +1,45 @@
+{
+    "Users": {
+        "builder": true,
+        "exported": true,
+        "model": true,
+        "initiated": true,
+        "controller": true,
+        "initializer": true
+    },
+    "Auth": {
+        "controller": true
+    },
+    "Patients": {
+        "exported": true,
+        "initiated": false,
+        "model": true,
+        "builder": true,
+        "controller": true,
+        "initializer": false
+    },
+    "PatientsHistory": {
+        "exported": true,
+        "initiated": false,
+        "model": true,
+        "builder": true,
+        "controller": true,
+        "initializer": false
+    },
+    "Medicine": {
+        "exported": true,
+        "initiated": false,
+        "model": true,
+        "builder": true,
+        "controller": true,
+        "initializer": false
+    },
+    "Laboratory": {
+        "exported": true,
+        "initiated": false,
+        "model": true,
+        "builder": true,
+        "controller": true,
+        "initializer": false
+    }
+}

@@ -1,0 +1,41 @@
+
+body{
+    width: 100vw;
+    min-width: 700px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.single_number_container {
+    background: white;
+    color: #797979;
+    width: 70px;
+    height: 55px;
+    border: 1px solid #797979;
+}
+
+.selected_number{
+    /*background: #0a5bff;*/
+    background: #072bbe;
+    background: radial-gradient(circle,rgba(10,91,255,0.37) 1.57%,#0a5bff 66.89%,#072bbe 100%);
+    color: white;
+}
+
+.header{
+    background: #072bbe;
+    color: white;
+}
+
+.number_item{
+    font-size: 35px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+.led_view{
+    background: #c6c6c6;
+    color: #535353;
+    width: 100%;
+    font-size: 30px;
+}

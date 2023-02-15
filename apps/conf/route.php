@@ -33,7 +33,7 @@ if(LineAuthentication::checkLogin("user_auth")){
         "/Users/change_password"
     );
 
-    ////////////////////////// laboratory ///////////////////
+    ////////////////////////// laboratory /////////////////////
 
     Route::get(
         "/report",

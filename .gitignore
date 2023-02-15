@@ -2,6 +2,5 @@ vendor/
 .idea/
 failure_log.txt
 apps/Builders/
-apps/Controllers/
-apps/Models/
 apps/Templates/
+apps/Runtime/

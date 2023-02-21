@@ -28,8 +28,10 @@ class Model implements ModelInterface
     public array $MAINS;
     public string $TABLE_NAME;
     public array $HIDDEN;
+    public array $ASSOCIATION;
     public $DATABASE = "MySql";
     public string $DATABASE_NAME = "first";
+    public array $RECORD = [];
 
 
     /**
@@ -61,6 +63,115 @@ class Model implements ModelInterface
 
         }
 
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param array $properties_array
+     * @param boolean $is_hidden
+     * @return void
+     */
+    public function addProperties(array $properties_array, $is_hidden = false){
+        if($is_hidden){
+            $this->HIDDEN = array_merge($this->HIDDEN, $properties_array);
+        }else{
+            $this->MAINS = array_merge($this->MAINS, $properties_array);
+        }
+    }
+
+    public function addAssociationProperties(array $properties_array){
+        $this->ASSOCIATION = array_merge($this->ASSOCIATION, $properties_array);
+    }
+
+    public function checkProperty($name, $is_hidden = false) {
+        if($is_hidden){
+            return in_array($name, $this->HIDDEN);
+        }else{
+            return in_array($name, $this->MAINS) || in_array($name, $this->ASSOCIATION);
+        }
+    }
+
+    public function checkRecord($property_name) {
+        return isset($this->RECORD[$property_name]);
+    }
+
+    /**
+     * this method will return the value of property 
+     * name by the given parameter
+     *
+     * @param string $property_name
+     * @return mixed|null
+     */
+    public function getValue(string $property_name){
+        
+        if($this->checkRecord($property_name)){
+            return $this->RECORD[$property_name];
+        }
+
+        return null;
+
+    }
+
+    public function removeValue($property_name){
+        
+    }
+
+    /**
+     * this method will set value to property found in the model
+     *
+     * @param string $property_name
+     * @param $value
+     * @return void
+     */
+    public function setProperty(string $property_name, $value) {
+
+        if($this->checkProperty($property_name)){
+            $this->RECORD[$property_name] = $value;
+        }
+
+    }
+
+    /**
+     * this method will set values to properties in the model
+     * which is given in associative array
+     *
+     * @param array $properties_value
+     * this parameter should be associative-array 
+     * of properties with their value
+     * @return void
+     */
+    public function setProperties(array $properties_value){
+        foreach($properties_value as $property_name => $value) {
+            if($this->checkProperty($property_name)){
+                $this->RECORD[$property_name] = $value;
+            }
+        }
+    }
+
+    /**
+     * will returns all the properties in the model
+     *
+     * @return array
+     */
+    public function getProperties(){
+        return array_merge($this->MAINS, $this->HIDDEN);
+    }
+
+    public function __set($name, $value){
+        $this->setProperty($name, $value);
+    }
+
+    public function __get($name){
+        return $this->getValue($name);
+    }
+
+    public function __isset($name){
+        return $this->checkProperty($name);
+    }
+
+    public function __unset($name){
+        $this->removeRecord($name);
     }
 
     /**
